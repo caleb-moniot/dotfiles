@@ -6,10 +6,15 @@
 - clean: ['~']
 
 - link:
+    ~/.zshrc: zshrc
+
+- shell:
+  - ["git submodule update --init --recursive", "Installing submodules"]
+
+- link:
     ~/.oh-my-zsh: oh-my-zsh
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh/plugins/zsh-autosuggestions
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh/plugins/zsh-syntax-highlighting
-    ~/.zshrc: zshrc
 
 - shell:
   - ["git submodule update --init --recursive", "Installing submodules"]
