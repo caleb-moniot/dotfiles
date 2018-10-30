@@ -115,6 +115,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# VTE Configuration
+# From: https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # User Aliases
 alias ls="ls -h --group-directories-first --color=always"
 alias ll="ls -lah --group-directories-first --color=always"
