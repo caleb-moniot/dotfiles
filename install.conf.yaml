@@ -15,6 +15,7 @@
     ~/.oh-my-zsh: oh-my-zsh
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh/plugins/zsh-autosuggestions
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh/plugins/zsh-syntax-highlighting
+    ~/.oh-my-zsh/custom/themes/powerlevel9k: zsh/themes/powerlevel9k
 
 - shell:
   - ["git submodule update --init --recursive", "Installing submodules"]

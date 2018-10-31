@@ -8,8 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -118,8 +118,18 @@ source $ZSH/oh-my-zsh.sh
 # VTE Configuration
 # From: https://gnunn1.github.io/tilix-web/manual/vteconfig/
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte.sh
 fi
+
+# Bash history controls
+export HISTCONTROL=ignoredups:erasedups
+export HISTTIMEFORMAT="[%F %T]"
+HISTFILESIZE=10000
+HISTSIZE=10000
+setopt appendhistory incappendhistory
+
+# After each command, append to history file and reread it.
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # User Aliases
 alias ls="ls -h --group-directories-first --color=always"
